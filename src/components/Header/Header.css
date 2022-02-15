@@ -1,0 +1,50 @@
+.imageAndSiteName img{
+    width: 45px;
+    height: 45px;
+}
+.imageAndSiteName{
+    display: flex;
+    column-gap: 10px;
+}
+.headerWrap{
+
+    background-color: #fce9e1;
+    padding: 0 10%;
+    border: 1px solid black;
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    width: 80%;
+    height: 9vh;
+}
+.header_items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 1200px;
+    margin: 0 auto;
+}
+.Movies{
+    color: gold;
+    font-weight: 600;
+    font-variant: small-caps;
+}
+.The{
+    font-style: italic;
+}
+.profile{
+    display: flex;
+}
+.profile img{
+    width: 45px;
+    height: 45px;
+}
+.SearchAndDropDown img{
+    width: 12px;
+}
+.SearchAndDropDown{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}

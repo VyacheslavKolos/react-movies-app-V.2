@@ -1,0 +1,21 @@
+.layoutWrap{
+margin: 0 auto;
+    background-color: #afafaf;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    padding-top: 150px;
+
+    width: 1200px;
+    margin: 0 auto;
+
+}
+.header{
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+}
