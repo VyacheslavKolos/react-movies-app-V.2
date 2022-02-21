@@ -14,7 +14,6 @@ const MoviesList: FC = () => {
         dispatch(getAllMovies(moviesPage))
     }, [moviesPage])
 
-
     return (
 
         <div className={'moviesList'}>

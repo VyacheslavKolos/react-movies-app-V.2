@@ -18,7 +18,7 @@ const PaginationMovies: FC= () => {
     return (
         <div>
             <Stack spacing={2}>
-                <Pagination count={10} page={page} onChange={handleChange}/>
+                <Pagination count={500} page={page} onChange={handleChange}/>
             </Stack>
         </div>
     );
