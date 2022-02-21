@@ -10,6 +10,7 @@ interface IMovieState {
     movieDetails: IMovieDetails;
     LinkOnClick: boolean;
     moviesByGenreId: IMovie[];
+    moviesPage:number;
 }
 
 const initialState: IMovieState = {
@@ -34,14 +35,15 @@ const initialState: IMovieState = {
         genres: [{id: 0, name: ''}]
     },
     LinkOnClick: false,
-    moviesByGenreId: []
+    moviesByGenreId: [],
+    moviesPage:1
 }
 
 
 export const getAllMovies = createAsyncThunk(
     'movieSlice/getAllMovies',
-    async (_, {dispatch}) => {
-        const {data} = await moviesService.getAll()
+    async (page:number, {dispatch}) => {
+        const {data} = await moviesService.getAll(page)
         dispatch(setMoviesResponse({moviesResponse: data}))
     }
 )
@@ -63,6 +65,14 @@ export const getMoviesByGenreId = createAsyncThunk(
     }
 )
 
+export const getMoviesPage = createAsyncThunk(
+    'movieSlice/getMoviesByGenreId',
+    async (page: number, {dispatch}) => {
+       await dispatch(setPage(page))
+    }
+)
+
+
 
 export const movieSlice = createSlice({
     name: 'movieSlice',
@@ -76,6 +86,9 @@ export const movieSlice = createSlice({
         }),
         setMoviesByGenreId: ((state, action: PayloadAction<IMovie[]>) => {
             state.moviesByGenreId = action.payload;
+        }),
+        setPage: ((state, action: PayloadAction<number>) => {
+            state.moviesPage = action.payload;
         })
     },
     extraReducers: {}
@@ -84,4 +97,4 @@ export const movieSlice = createSlice({
 const movieReducer = movieSlice.reducer;
 export default movieReducer;
 
-export const {setMoviesResponse, setMovieDetails, setMoviesByGenreId} = movieSlice.actions;
+export const {setMoviesResponse, setMovieDetails, setMoviesByGenreId,setPage} = movieSlice.actions;

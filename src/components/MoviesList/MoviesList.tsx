@@ -7,13 +7,12 @@ import './MoviesList.css'
 import {PaginationMovies} from "../Layout/PaginationMovies/PaginationMovies";
 
 const MoviesList: FC = () => {
-    const {moviesResponse} = useAppSelector(state => state.movieReducer)
+    const {moviesResponse,moviesPage} = useAppSelector(state => state.movieReducer)
     let dispatch = useAppDispatch();
 
-
     useEffect(() => {
-        dispatch(getAllMovies())
-    }, [])
+        dispatch(getAllMovies(moviesPage))
+    }, [moviesPage])
 
 
     return (
