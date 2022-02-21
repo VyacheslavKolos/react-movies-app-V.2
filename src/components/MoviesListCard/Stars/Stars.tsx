@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {FC, useState} from "react";
 import {FaStar} from "react-icons/fa";
 
 import './Stars.css'
@@ -8,13 +8,15 @@ const colors = {
     grey: "#a9a9a9"
 };
 
+interface IProps{
+    vote_average:number
+}
 
-function Stars() {
-    const [currentValue, setCurrentValue] = useState<number>(Math.floor(2 + Math.random() * (5 - 2)));
+const Stars :FC<IProps>= ({vote_average}) => {
+    const [currentValue, setCurrentValue] = useState<number>(Math.round(vote_average/2));
     const [hoverValue, setHoverValue] = useState(undefined);
     const stars = Array(5).fill(0)
-
-
+    console.log(vote_average);
     return (
         <div className={'containerr'}>
             <div className={'stars'}>
