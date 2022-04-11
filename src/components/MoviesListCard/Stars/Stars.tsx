@@ -16,7 +16,6 @@ const Stars :FC<IProps>= ({vote_average}) => {
     const [currentValue, setCurrentValue] = useState<number>(Math.round(vote_average/2));
     const [hoverValue, setHoverValue] = useState(undefined);
     const stars = Array(5).fill(0)
-    console.log(vote_average);
     return (
         <div className={'containerr'}>
             <div className={'stars'}>

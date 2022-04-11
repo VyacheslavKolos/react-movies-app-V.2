@@ -10,7 +10,6 @@ const MoviesListByGenrePage: FC = () => {
 
     const {id} = useParams<{ id: string }>()
 
-
     let dispatch = useAppDispatch();
     useEffect(() => {
         if (id) {
@@ -19,7 +18,6 @@ const MoviesListByGenrePage: FC = () => {
     }, [id])
 
     const {moviesByGenreId} = useAppSelector(state => state.movieReducer)
-
 
     return (
         <div className={'moviesList'}>

@@ -11,6 +11,9 @@ interface IMovieState {
     LinkOnClick: boolean;
     moviesByGenreId: IMovie[];
     moviesPage:number;
+    //
+    arrFilmsByName:IMovie[];
+    //
 }
 
 const initialState: IMovieState = {
@@ -36,7 +39,10 @@ const initialState: IMovieState = {
     },
     LinkOnClick: false,
     moviesByGenreId: [],
-    moviesPage:1
+    moviesPage:1,
+    //
+    arrFilmsByName:[]
+    //
 }
 
 
@@ -72,7 +78,14 @@ export const getMoviesPage = createAsyncThunk(
     }
 )
 
-
+//
+export const getMoviesByName = createAsyncThunk(
+    'movieSlice/getMoviesByName',
+    async (arrFilmsByName: IMovie[], {dispatch}) => {
+        await dispatch( setMoviesByName(arrFilmsByName))
+    }
+)
+//
 
 export const movieSlice = createSlice({
     name: 'movieSlice',
@@ -89,7 +102,12 @@ export const movieSlice = createSlice({
         }),
         setPage: ((state, action: PayloadAction<number>) => {
             state.moviesPage = action.payload;
+        }),
+//
+        setMoviesByName: ((state, action: PayloadAction<IMovie[]>) => {
+            state.arrFilmsByName = action.payload;
         })
+//
     },
     extraReducers: {}
 })
@@ -97,4 +115,8 @@ export const movieSlice = createSlice({
 const movieReducer = movieSlice.reducer;
 export default movieReducer;
 
-export const {setMoviesResponse, setMovieDetails, setMoviesByGenreId,setPage} = movieSlice.actions;
+export const {setMoviesResponse, setMovieDetails, setMoviesByGenreId,setPage,
+    //
+    setMoviesByName
+//
+} = movieSlice.actions;

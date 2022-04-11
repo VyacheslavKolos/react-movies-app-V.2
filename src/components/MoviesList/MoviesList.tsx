@@ -8,7 +8,7 @@ import {PaginationMovies} from "../Layout/PaginationMovies/PaginationMovies";
 
 const MoviesList: FC = () => {
     const {moviesResponse,moviesPage} = useAppSelector(state => state.movieReducer)
-    let dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(getAllMovies(moviesPage))
