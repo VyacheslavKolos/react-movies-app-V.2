@@ -4,13 +4,15 @@
 }
 .imageAndSiteName{
     display: flex;
-    column-gap: 10px;
+    column-gap: 6px;
+    justify-content: center;
+    align-items: center;
 }
 .headerWrap{
 
-    background-color: #fce9e1;
+    background-color: rgba(75, 172, 253, 0.85);
     padding: 0 10%;
-    border: 1px solid black;
+    border: 2px solid #010be3;
     position: fixed;
     z-index: 40;
     top: 0;
@@ -47,4 +49,18 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
+}
+.imageAndSiteName p{
+    font-size: 26px;
+}
+.imageAndSiteName img{
+    width: 70px;
+    height: 70px;
+}
+.search button{
+    background-color: rgba(75, 172, 253, 0.85);
+}
+.searchInputAndButton{
+    display: flex;
+    height: 28px;
 }

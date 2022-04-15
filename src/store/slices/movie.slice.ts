@@ -4,7 +4,7 @@ import {IMovie, IMovieDetails, IMovieResponse} from "../../interfaces";
 import {moviesService} from "../../services";
 
 interface IMovieState {
-    moviesResponse: IMovieResponse;
+    allMovies: IMovie[];
     status: null;
     errors: null;
     movieDetails: IMovieDetails;
@@ -17,9 +17,7 @@ interface IMovieState {
 }
 
 const initialState: IMovieState = {
-    moviesResponse: {
-        results: []
-    },
+    allMovies: [],
     status: null,
     errors: null,
     movieDetails: {
@@ -49,8 +47,8 @@ const initialState: IMovieState = {
 export const getAllMovies = createAsyncThunk(
     'movieSlice/getAllMovies',
     async (page:number, {dispatch}) => {
-        const {data} = await moviesService.getAll(page)
-        dispatch(setMoviesResponse({moviesResponse: data}))
+        const data = await moviesService.getAll(page)
+        dispatch(setAllMovies(data))
     }
 )
 
@@ -81,8 +79,9 @@ export const getMoviesPage = createAsyncThunk(
 //
 export const getMoviesByName = createAsyncThunk(
     'movieSlice/getMoviesByName',
-    async (arrFilmsByName: IMovie[], {dispatch}) => {
-        await dispatch( setMoviesByName(arrFilmsByName))
+    async ({ page, name } : { page: number, name: string }, { dispatch }) => {
+        const data = await moviesService.getMoviesByName(page,name)
+        dispatch(setMoviesByName(data))
     }
 )
 //
@@ -91,8 +90,8 @@ export const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
     reducers: {
-        setMoviesResponse: ((state, action: PayloadAction<{ moviesResponse: IMovieResponse }>) => {
-            state.moviesResponse = action.payload.moviesResponse;
+        setAllMovies: ((state,action: PayloadAction<IMovie[]>) => {
+            state.allMovies = action.payload;
         }),
         setMovieDetails: ((state, action: PayloadAction<{ movieDetails: IMovieDetails }>) => {
             state.movieDetails = action.payload.movieDetails;
@@ -115,7 +114,7 @@ export const movieSlice = createSlice({
 const movieReducer = movieSlice.reducer;
 export default movieReducer;
 
-export const {setMoviesResponse, setMovieDetails, setMoviesByGenreId,setPage,
+export const {setAllMovies, setMovieDetails, setMoviesByGenreId,setPage,
     //
     setMoviesByName
 //

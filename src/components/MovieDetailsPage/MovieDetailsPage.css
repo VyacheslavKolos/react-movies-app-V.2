@@ -4,7 +4,8 @@
     position: relative;
     background-size: cover !important;
     background-position: center;
-    overflow-x: hidden
+    overflow-x: hidden;
+    border-radius: 70px;
 }
 .container{
     max-width: 1260px;
@@ -12,6 +13,7 @@
 }
 .row{
     display: flex;
+    background: aliceblue;
 }
 .movie-info-box{
     width: 75%;

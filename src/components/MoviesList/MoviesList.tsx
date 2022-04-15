@@ -7,7 +7,7 @@ import './MoviesList.css'
 import {PaginationMovies} from "../Layout/PaginationMovies/PaginationMovies";
 
 const MoviesList: FC = () => {
-    const {moviesResponse,moviesPage} = useAppSelector(state => state.movieReducer)
+    const {allMovies,moviesPage} = useAppSelector(state => state.movieReducer)
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const MoviesList: FC = () => {
     return (
 
         <div className={'moviesList'}>
-            {moviesResponse.results.map(movie =>
+            {allMovies.map(movie =>
 
                 <MoviesListCard key={movie.id} movie={movie}/>
             )}

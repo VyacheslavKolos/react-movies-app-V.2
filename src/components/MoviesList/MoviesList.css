@@ -6,7 +6,8 @@
     padding: 5px 15px;
     justify-content: space-around;
     align-items: flex-start;
-
+    height: 570px;
+    overflow-y: scroll;
 }
 a{
     text-decoration: none;

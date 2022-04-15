@@ -1,21 +1,34 @@
-.layoutWrap{
-margin: 0 auto;
-    background-color: #afafaf;
+.layoutWrap {
+    margin: 0 auto;
+    background-image: url("../../images/ukr1.jpg");
+    height: 100vh;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
 }
-.main{
-    padding-top: 150px;
 
+.main {
+    padding-top: 120px;
     width: 1200px;
     margin: 0 auto;
+}
 
-}
-.header{
-}
-.pagination{
+.pagination {
     display: flex;
     justify-content: center;
+    background-color: white;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background-color: #54d6ff;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: gold;
+    border-radius: 10px;
+    border: 2px solid #010be3;
 }
