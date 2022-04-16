@@ -7,8 +7,6 @@ import {MovieListByFilmNamePage} from "./components/Pages/MovieListByFilmNamePag
 const App:FC= () => {
     return (
         <div>
-
-
             <Routes>
                 <Route path={"/"} element={<Layout/>}>
 
