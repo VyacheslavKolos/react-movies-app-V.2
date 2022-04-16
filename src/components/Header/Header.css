@@ -49,6 +49,11 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
+    background-color: #1978d2;
+    width: 32%;
+    justify-content: center;
+    border-radius: 3%;
+    padding: 2px;
 }
 .imageAndSiteName p{
     font-size: 26px;
@@ -63,4 +68,7 @@
 .searchInputAndButton{
     display: flex;
     height: 28px;
+}
+.searchInputAndButton input{
+    background-color: rgba(75, 172, 253, 0.85);
 }

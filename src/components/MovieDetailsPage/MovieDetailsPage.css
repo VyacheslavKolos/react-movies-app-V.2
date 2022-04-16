@@ -1,4 +1,4 @@
-.content-section{
+.content-section {
     width: 100%;
     padding: 0 0;
     position: relative;
@@ -7,30 +7,34 @@
     overflow-x: hidden;
     border-radius: 70px;
 }
-.container{
+
+.container {
     max-width: 1260px;
     background-color: white;
 }
-.row{
+
+.row {
     display: flex;
     background: aliceblue;
 }
-.movie-info-box{
+
+.movie-info-box {
     width: 75%;
     height: 100%;
     position: relative;
     z-index: 1;
-    padding-right: 20px;
-
+    padding: 8px 20px 8px 8px;
 }
-.name{
+
+.name {
     width: 100%;
     display: block;
     margin-bottom: 10px;
     font-size: 70px;
     font-weight: 600;
 }
-.features{
+
+.features {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -38,46 +42,55 @@
     margin-bottom: 30px;
     padding: 0;
 }
+
 .movie-info-box .features .rate img {
     height: 20px;
 }
-.rate{
+
+.rate {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 20px;
     column-gap: 6px;
 }
+
 .movie-info-box .features .year {
     display: inline-block;
     font-weight: 800;
     margin-right: 20px;
 }
+
 .movie-info-box .features .range {
     display: inline-block;
     margin-right: 20px;
 }
+
 .movie-info-box .features .category {
     color: #e90101;
     font-weight: 600;
 }
+
 .movie-side-box {
     max-width: 25%;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
-.movie-side-box img{
+
+.movie-side-box img {
     width: 100%;
     max-height: 470px;
 }
+
 .movie-info-box .descriptionn {
     display: block;
     font-size: 17px;
     margin-bottom: 0;
     line-height: 1.7;
 }
-.category{
+
+.category {
     display: flex;
     column-gap: 10px;
 }
