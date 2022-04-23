@@ -20,6 +20,8 @@ body {
     justify-content: center;
     background-color: white;
 }
+
+
 ::-webkit-scrollbar{
     width: 15px;
 }

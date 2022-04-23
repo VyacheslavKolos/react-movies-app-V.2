@@ -10,14 +10,17 @@ const Layout = () => {
     return (
         <div>
             <div className={"layoutWrap"}>
-                <div className={'header'}>
-                    <Header/>
-                </div>
 
 
-                <div className={"main"}>
-                    <Outlet/>
-                </div>
+                    <div className={'header'}>
+                        <Header/>
+                    </div>
+
+
+                    <div className={"main"}>
+                        <Outlet/>
+                    </div>
+
 
 
             </div>
